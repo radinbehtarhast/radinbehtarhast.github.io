@@ -1,0 +1,256 @@
+.tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.tile {
+  width: 120px; /* Increased width */
+  height: 180px; /* Increased height */
+  margin: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px; /* More rounded corners */
+  padding: 10px; /* More padding */
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row .col {
+  float: auto;
+  box-sizing: border-box; /* Changed to border-box */
+  padding: 10px; /* Added padding */
+  min-height: 1px;
+}
+
+.tile img {
+  max-width: 70%; /* Adjusted size */
+  max-height: 70%; /* Adjusted size */
+  border-radius: 8px; /* More rounded corners */
+}
+
+.background {
+  background-color: #101213;
+}
+
+.tile-title {
+  margin-top: 10px; /* Increased margin */
+  font-weight: bold;
+}
+
+.tile:hover {
+  transform: scale(1.1); /* More pronounced enlargement on hover */
+}
+
+/* colors */
+:root {
+  --primary: #49e600;
+  --secondary: #49e600;
+  --title: #000000;
+  --text-color: #000000;
+}
+
+/* layout styles */
+nav {
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: var(--title);
+}
+
+/* recipe styles */
+.recipes {
+  margin-top: 20px;
+}
+
+.card-panel.recipe {
+  border-radius: 16px; /* Even more rounded corners */
+  padding: 24px; /* Increased padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  display: flex;
+  align-items: center;
+}
+
+.recipe img {
+  max-width: 100px; /* Increased size */
+  height: auto;
+  margin-right: 20px; /* Increased spacing */
+  border-radius: 10px; /* More rounded corners */
+}
+
+.recipe-details {
+  flex-grow: 1;
+  color: var(--title);
+}
+
+.recipe-delete {
+  margin-left: 20px;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.recipe-delete i {
+  font-size: 24px; /* Larger icon */
+  color: var(--title);
+}
+
+.recipe-title {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.recipe-ingredients {
+  font-size: 1em; /* Larger font size */
+  color: var(--text-color);
+}
+
+/* form styles */
+.add-btn {
+  background: var(--title) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Increased shadow */
+}
+
+input {
+  color: var(--text-color);
+}
+
+.side-form {
+  padding: 30px; /* Increased padding */
+  color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  color: var(--text-color);
+}
+
+.side-form button {
+  background: var(--title);
+  color: white;
+}
+
+.form-label {
+  color: var(--title);
+}
+
+.form-divider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.input-field {
+  margin-top: 30px; /* Increased margin */
+}
+
+.sidenav {
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.sidenav li>a {
+  color: var(--title);
+}
+
+.sidenav .subheader {
+  color: var(--title);
+}
+
+/* General styles for the card */
+.card {
+  background-color: #191c1f;
+  border-radius: 16px; /* More rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+  width: 100%;
+  max-width: 60%; /* Larger max-width */
+  margin: 0 auto; /* Center the card */
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1); /* More pronounced enlargement on hover */
+}
+
+/* Card image styles */
+.card-image {
+  position: relative;
+  color: #191c1f;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Title overlay on the image */
+/* Card content styles */
+.card-content {
+  padding: 20px; /* Increased padding */
+}
+
+.card-content p {
+  margin: 0;
+  color: #191C1F;
+}
+
+/* Card action button styles */
+.card-action {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0080ff;
+}
+
+.card-action a {
+  text-decoration: none;
+  color: #191c1f;
+  border-radius: 6px; /* More rounded corners */
+  transition: background-color 0.3s;
+}
+
+.card-action a:hover {
+  opacity: 0.9;
+}
+
+/* Button styles */
+.card-action .btn {
+  background-color: #0080ff;
+}
+
+.card-action .btn.red {
+  background-color: #ff0000;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .card {
+    width: 80%;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .card-action {
+    flex-direction: column;
+  }
+
+  .card-action a {
+    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+}

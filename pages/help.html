@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About ATP Log</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <style>
+    .jumbotron {
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      mix-blend-mode: difference;
+    }
+
+    .about-section {
+      margin-top: 100px;
+    }
+
+    .row {
+      margin-top: 550px;
+    }
+
+    .text-overlay a {
+      mix-blend-mode: normal; 
+    }
+
+    .card {
+      background-color: white;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar using Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container">
+      <a class="navbar-brand" href="/">ATP Log</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/help.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.atptour.com/en/rankings/singles"><i class="fas fa-envelope"></i> ATP Ranking</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FAQ Section -->
+<div class="container mt-5">
+  <h2 class="text-center">Frequently Asked Questions</h2>
+  <div class="accordion" id="faqAccordion">
+
+    <!-- FAQ Item 1 -->
+    <div class="card">
+      <div class="card-header" id="faqHeadingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+            How can I access ATP Log?
+          </button>
+        </h2>
+      </div>
+
+      <div id="faqCollapseOne" class="collapse show" aria-labelledby="faqHeadingOne" data-parent="#faqAccordion">
+        <div class="card-body">
+          You can access ATP Log by visiting our website at www.atplog.com. The platform provides information on ATP tournament matches, player rankings, and upcoming events in professional tennis.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Item 2 -->
+    <div class="card">
+      <div class="card-header" id="faqHeadingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+            Is ATP Log free to use?
+          </button>
+        </h2>
+      </div>
+
+      <div id="faqCollapseTwo" class="collapse" aria-labelledby="faqHeadingTwo" data-parent="#faqAccordion">
+        <div class="card-body">
+          Yes, ATP Log is a free platform for all tennis enthusiasts. You can browse tournament schedules, match results, and player rankings without any cost.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Item 3 -->
+    <div class="card">
+      <div class="card-header" id="faqHeadingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+            How often is ATP Log updated?
+          </button>
+        </h2>
+      </div>
+
+      <div id="faqCollapseThree" class="collapse" aria-labelledby="faqHeadingThree" data-parent="#faqAccordion">
+        <div class="card-body">
+          ATP Log is regularly updated with the latest tournament results, player rankings, and upcoming match schedules. Check back frequently to stay informed about the latest happenings in the world of professional tennis.
+        </div>
+      </div>
+    </div>
+
+        <!-- FAQ Item 4 -->
+    <div class="card">
+      <div class="card-header" id="faqHeadingFour">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
+            Am I gonna get a good mark for all of this?
+          </button>
+        </h2>
+      </div>
+
+      <div id="faqCollapseFour" class="collapse" aria-labelledby="faqHeadingFour" data-parent="#faqAccordion">
+        <div class="card-body">
+          I sure fucking hope so!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

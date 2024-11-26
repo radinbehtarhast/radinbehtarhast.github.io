@@ -1,10 +1,9 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>About ATP Log</title>
+  <title><b>ATP Log</b> Offline</title>
   <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
@@ -17,6 +16,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="apple-touch-icon" href="/img/icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+  <meta name="theme-color" content="#FFE1C4">
 </head>
 <body class="bg-light">
 
@@ -33,7 +38,7 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pages/about.html">About</a>
+            <a class="nav-link" href="/pages/help.html">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="https://www.atptour.com/en/rankings/singles"><i class="fas fa-envelope"></i> ATP Ranking</a>
@@ -43,30 +48,134 @@
     </div>
   </nav>
 
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-4">Welcome to ATP Log</h1>
-      <p class="lead">Your ultimate source for ATP tournament matches, results, and rankings in the world of professional tennis.</p>
-      <a href="/main.html" class="btn btn-primary">Go to Homepage</a>
-    </div>
-  </div>
-
   <div class="container mt-5">
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>About Us</h2>
-        <p>ATP Log is a dedicated platform for tennis enthusiasts who want to stay informed about the latest ATP tournament matches, player rankings, and upcoming events. Our goal is to provide comprehensive coverage and insights into the world of professional tennis.</p>
-      </div>
-      <div class="col-lg-6">
-        <h2>Our Mission</h2>
-        <p>Our mission is to deliver accurate and timely information to our users, helping them stay updated on their favorite players, matches, and tournaments. We aim to create a community of passionate tennis fans who share a common love for the sport.</p>
+    <div class="recipes text-dark">
+    </div>
+
+    <div class="text-center mt-4">
+      <!-- Button using Bootstrap -->
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addModal">
+        <i class="fas fa-plus"></i> Add New Entry
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal using Bootstrap -->
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Entry</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="add-recipe-form">
+            <div class="form-group">
+              <label for="title">Entry Title</label>
+              <input type="text" class="form-control" id="title" placeholder="e.g. stole candy from a baby">
+            </div>
+            <div class="input-field col s12">
+              <select id="tournamentselect" for="grandslam">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="Australian Open">Australian Open</option>
+                <option value="French Open">French Open</option>
+                <option value="Wimbledon">Wimbledon</option>
+                <option value="US Open">US Open</option>
+              </select>
+              <label>Grand Slam</label>
+            </div>
+            <div class="form-group">
+              <label for="player1name">Player 1 Name</label>
+              <input type="text" class="form-control" id="player1name" placeholder="e.g. blah blah blah">
+            </div>  
+            <div class="form-group">
+              <label for="player2name">Player 2 Name</label>
+              <input type="text" class="form-control" id="player2name" placeholder="e.g. blah blah blah">
+            </div> 
+            <div class="form-group">
+              <label for="score">Score</label>
+              <input type="text" class="form-control" id="score" placeholder="e.g. 6-3, 2-6, 7-6, 6-4">
+            </div> 
+            <div class="input-field col s12">
+              <select id="pwinner" for="pwinner">
+                <option value="" disabled selected>Choose the winning player</option>
+                <option value="Player 1">Player 1</option>
+                <option value="Player 2">Player 2</option>
+              </select>
+              <label>Winner</label>
+            </div>
+            <div class="form-group">
+              <label for="ingredients">Description</label>
+              <input type="text" class="form-control" id="ingredients" placeholder="e.g. blah blah blah">
+            </div> 
+            <button type="submit" class="btn btn-success">Add</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
+  <!-- Firebase & App JS -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-firestore.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBLvk6pOG4LUF4-zZ3e4SQ2qe9eNaYMZDM",
+      authDomain: "noname-db-7764d.firebaseapp.com",
+      projectId: "noname-db-7764d",
+      storageBucket: "noname-db-7764d.firebasestorage.app",
+      messagingSenderId: "153290065634",
+      appId: "1:153290065634:web:79965d69fe3e3822b1c0bb",
+      measurementId: "G-QMXXWQEHNP",
+      databaseURL: "https://noname-db-7764d.nam5.firebaseio.com",
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+  </script>
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Initialize Materialize components
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elems);
+      var modalElems = document.querySelectorAll('.modal');
+      var modalInstances = M.Modal.init(modalElems);
+    });
+  </script>
+  <script src="/js/app.js"></script>
+  <script src="/js/db.js"></script>
+  <script src="/js/ui.js"></script>
+  <script> document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select'); 
+    var instances = M.FormSelect.init(elems);
+    }); 
+  </script>
+  <script> 
+  document.addEventListener('DOMContentLoaded', function() { 
+    var elems = document.querySelectorAll('select'); 
+    var instances = M.FormSelect.init(elems);
+    document.getElementById('save-selection').addEventListener('click', function() { 
+      var selectedValue = document.getElementById('tournament-select').value; 
+      if (selectedValue) { 
+        db.collection('tournaments').add({ 
+          selection: selectedValue 
+        }).then(() => { 
+          alert('Selection saved: ' + selectedValue); 
+        }).catch((error) => { 
+        console.error('Error saving selection: ', error);
+        }); 
+      } else { 
+        alert('Please select an option.');
+         } 
+        }); }); 
+    </script>
 </body>
 </html>
